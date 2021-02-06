@@ -53,7 +53,7 @@ App class:
 * Create class ThreadA
 * Create class ThreadB
 * Using Exchanger, exchange from ThreadA string "from A" and print it
-* Using Exchanger, exchange from ThreadA string "from B" and print it
+* Using Exchanger, exchange from ThreadB string "from B" and print it
 
 ## Exercise 9:
 * Implement producer consumer using java builtIn blocking queue implementation

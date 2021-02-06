@@ -2,6 +2,8 @@ package com.codecool.threads.advanced.lessons.countdownlatch.waitingtostart;
 
 import java.util.concurrent.CountDownLatch;
 
+import static java.lang.Thread.sleep;
+
 public class Worker implements Runnable {
 
     private final CountDownLatch startSignal;
@@ -15,20 +17,15 @@ public class Worker implements Runnable {
     @Override
     public void run() {
         try {
-            report("entered run()");
+            System.out.println(Thread.currentThread().getName() + " entered run");
             startSignal.await();
-            report("doing work");
-            Thread.sleep((int) (Math.random() * 1000));
-            doneSignal.countDown();
 
+            System.out.println(Thread.currentThread().getName() + " is working run");
+            sleep(4000);
+            doneSignal.countDown();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
 
-    void report(String context) {
-        System.out.println(System.currentTimeMillis() +
-                ": " + Thread.currentThread() +
-                ": " + context);
-    }
 }

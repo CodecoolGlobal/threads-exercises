@@ -14,7 +14,7 @@ public class NetworkHealthChecker implements Runnable {
     public void run() {
         System.out.println("Checking Network Service connection...");
         try {
-            Thread.sleep(5000);
+            Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

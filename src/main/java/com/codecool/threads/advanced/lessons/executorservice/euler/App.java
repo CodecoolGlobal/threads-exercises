@@ -9,21 +9,18 @@ public class App {
 
     private final static int LASTITER = 20;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ExecutionException, InterruptedException {
         Callable<BigDecimal> callable = getEulerCalcCallable();
-        ExecutorService executor = Executors.newFixedThreadPool(1);
-        Future<BigDecimal> maybeEuler = executor.submit(callable);
+        ExecutorService executorService = Executors.newSingleThreadExecutor();
 
-        try {
-            while (!maybeEuler.isDone()) {
-                System.out.println("waiting");
-            }
-            System.out.println(maybeEuler.get());
-        } catch (InterruptedException | ExecutionException e) {
-            System.out.println("Exception being thrown");
+        Future<BigDecimal> futureEuler = executorService.submit(callable);
+
+        while (!futureEuler.isDone()) {
+            System.out.println("Waiting");
         }
 
-        executor.shutdownNow();
+        System.out.println(futureEuler.get());
+        executorService.shutdownNow();
     }
 
     private static Callable<BigDecimal> getEulerCalcCallable() {

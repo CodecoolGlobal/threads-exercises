@@ -14,7 +14,7 @@ public class DatabaseHealthChecker implements Runnable {
     public void run() {
         System.out.println("Checking Database connection...");
         try {
-            Thread.sleep(5000);
+            Thread.sleep(7000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

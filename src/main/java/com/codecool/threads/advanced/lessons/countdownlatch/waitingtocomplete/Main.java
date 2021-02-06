@@ -9,12 +9,13 @@ import java.util.concurrent.Executors;
 public class Main {
 
     public static void main(String[] args) throws InterruptedException {
-        CountDownLatch countDownLatch = new CountDownLatch(3);
+        CountDownLatch countDownLatch = new CountDownLatch(4);
 
         List<Runnable> checkers = Arrays.asList(
                 new CacheHealthChecker(countDownLatch),
                 new DatabaseHealthChecker(countDownLatch),
-                new NetworkHealthChecker(countDownLatch));
+                new NetworkHealthChecker(countDownLatch)
+        );
 
         ExecutorService executorService = Executors.newFixedThreadPool(3);
 

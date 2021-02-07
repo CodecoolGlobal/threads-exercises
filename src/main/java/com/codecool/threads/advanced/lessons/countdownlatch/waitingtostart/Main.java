@@ -9,8 +9,8 @@ import static java.lang.Thread.sleep;
 public class Main {
 
     public static void main(String[] args) throws InterruptedException {
-        CountDownLatch startSignal = new CountDownLatch(2);
-        CountDownLatch doneSignal = new CountDownLatch(4);
+        CountDownLatch startSignal = new CountDownLatch(1);
+        CountDownLatch doneSignal = new CountDownLatch(3);
 
         Worker worker = new Worker(startSignal, doneSignal);
 

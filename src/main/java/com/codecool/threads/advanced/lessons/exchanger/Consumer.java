@@ -20,7 +20,7 @@ public class Consumer implements Runnable {
                 try {
                     String packet = blockingQueue.take();
                     System.out.println(Thread.currentThread().getName() + " consumes: " + packet);
-                    blockingQueue = exchanger.exchange(blockingQueue);
+                    exchanger.exchange(blockingQueue);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

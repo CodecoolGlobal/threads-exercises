@@ -15,7 +15,7 @@ public class BlockingQueue {
         queue.add(packet);
     }
 
-    public boolean nonEmpty(){
+    public boolean nonEmpty() {
         return !queue.isEmpty();
     }
 

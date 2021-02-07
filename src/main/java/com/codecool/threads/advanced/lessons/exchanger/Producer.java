@@ -35,7 +35,7 @@ public class Producer implements Runnable {
                 System.out.println(Thread.currentThread().getName() + " putting: " + packet);
                 blockingQueue.put(packet);
                 sleep(1000);
-                blockingQueue = exchanger.exchange(blockingQueue);
+                exchanger.exchange(blockingQueue);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

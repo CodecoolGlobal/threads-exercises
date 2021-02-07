@@ -10,6 +10,7 @@ public class CyclicBarrierDemo {
     public static void main(String[] args) {
         int numberOfPartialResults = 3;
         int numberOfThreads = 5;
+
         List<List<Integer>> partialResults = Collections.synchronizedList(new ArrayList<>());
 
         CyclicBarrier cyclicBarrier = new CyclicBarrier(numberOfThreads,

@@ -49,7 +49,7 @@ App class:
 * Start the 3 threads, manually or using ExecutorService (choose one you wish)
 * Make the main thread to await on CountDownLatch for all threads to stop waiting.
 
-## Exercise 8:
+## Exercise 8 (Exchanger):
 * Create class ThreadA
 * Create class ThreadB
 * Using Exchanger, exchange from ThreadA string "from A" and print it

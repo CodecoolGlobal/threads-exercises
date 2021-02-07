@@ -28,6 +28,7 @@ public class App {
                 .sum();
 
         System.out.println(sum);
+
         executorService.shutdownNow();
     }
 
